@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            /* 鼠标移入变图片效果 */
+            cursor: -webkit-image-set(url(./eye.png) 1x, url(./eye.png) 2x) 15 15, pointer;
+
+            /* px大写  px 单位不被转换成 rpx 或者 rem  */
+            width: 100PX;
+
+            /* 禁止a链接点击 */
+            pointer-events: none;
+
+            /* 文字背景颜色 */
+            background: linear-gradient(104deg,
+                    rgba(235, 199, 76, 0) 0.9%,
+                    rgb(235, 199, 76) 2.4%,
+                    rgba(235, 199, 76, 0.5) 5.8%,
+                    rgba(235, 199, 76, 0.1) 93%,
+                    rgba(235, 199, 76, 0.7) 96%),
+                linear-gradient(183deg,
+                    rgb(185, 154, 53),
+                    rgba(235, 199, 76, 0.3) 7.9%,
+                    rgba(235, 199, 76, 0.2) 15%);
+            /* 文字阴影 */
+            text-shadow: -12px 15px 9.8px rgb(235, 199, 76),
+                21px -18.1px 7.3px #fff, -18.1px -27.3px 30px #fff;
+        }
+
+        /* 点击前样式 */
+        .menuIconBlack,
+        .menuIconWhite {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 24px;
+            height: 24px;
+            z-index: 100;
+        }
+
+        span {
+            width: 24px;
+            height: 2px;
+            display: block;
+            transition-property: opacity transform top;
+            transition-duration: .2s;
+            background-color: #fff;
+        }
+
+        .line1,
+        .line2 {
+            background: #000;
+        }
+
+        /* 点击后样式 */
+        .menu-closeable {
+            position: relative;
+            z-index: 100;
+        }
+
+        span:nth-child(2) {
+            position: absolute;
+            transform: rotateZ(-45deg);
+            top: 10px;
+        }
+
+        span:nth-child(1) {
+            position: absolute;
+            transform: rotateZ(45deg);
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menuIconWhite">
+        <span class="line1"></span>
+        <span class="line1"></span>
+    </div>
+</body>
+
+</html>
